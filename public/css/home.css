@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Angella White';
+    src: url('../font/Angella\ White.otf');
+}
+
+h2{
+    font-weight: 400;
+}
+
+h3{
+    font-weight: 400;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    width: 100%;
+}
+
+.header{
+    width: 100%;
+    text-align: center;
+}
+
+.header__top{
+    width: 100%;
+    margin-top: 80px;
+}
+
+.header__top h1{
+    font-family: 'Angella White', sans-serif;
+    font-size: 80px;
+    font-weight: 100;
+}
+
+.header__middle{
+    margin-top: 80px;
+    width: 100%;
+    height: 500px; /* Later remove */
+    background: black;
+}
+
+.header__down{
+    width: 100%;
+}
+
+.header__down p{
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.main{
+    width: 100%;
+    text-align: center;
+}
+
+.main__lilyImage{
+    width: 10%;
+    margin: auto;
+}
+
+.lillyImage{
+    width: 100%;
+    margin: 80px 0;
+}
+
+.main__texts{
+    width: 70%;
+    margin: auto;
+}
+
+.main__texts p{
+    margin-top: 50px;
+}
+
+.main__productsCore{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+    margin-top: 80px;
+    gap: 40px 20px;
+}
+
+.main__seeMore{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 60%;
+    margin: auto;
+    margin-top: 80px;
+    gap: 40px 20px;
+    height: 0px;
+    overflow: hidden;
+    transition: 10s;
+}
+
+.product{
+    /* background: red; */
+    padding: 10px;
+    margin: 0px 20px;
+    cursor: pointer;
+    border-radius: 12px;
+    border: 1px solid rgb(192, 192, 192);
+    cursor: auto;
+    padding-bottom: 15px;
+}
+
+.giftBtn{
+    padding: 8px 10px;
+    border: 1px solid rgb(26, 26, 26);
+    transition: .2s;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    background: white;
+}
+
+.giftBtn:hover{
+    background: rgb(26, 26, 26);
+    color: white;
+}
+
+.main__seeMoreBtn{
+    margin-top: 80px;
+}
+
+.main__seeMoreBtn .seeMoreBtn{
+    background: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.model{
+    position: fixed;
+    border: 1px solid rgb(192, 192, 192);
+    padding: 20px;
+    margin: auto;
+    border-radius: 10px;
+    top: 20%;
+    left: 50%;
+    z-index: 100000;
+    background: white;
+    width: 60%;
+    height: 400px;
+    transform: translateX(-50%);
+    display: none;
+}
+
+.model .productNameParagrath{
+    text-align: center;
+    margin-top: 30px;
+}
+
+.model form{
+    text-align: center;
+    margin-top: 80px;
+}
+
+.model .formInput{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 80px;
+    padding-bottom: 20px;
+}
+
+.model button{
+    margin-top: 150px;
+    padding: 8px 20px;
+    border: 1px solid rgb(26, 26, 26);
+    transition: .2s;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    background: white;
+}
+
+.model .titles{
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+}
+
+.back{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.model_end{
+    position: fixed;
+    border: 1px solid rgb(192, 192, 192);
+    padding: 20px;
+    margin: auto;
+    border-radius: 10px;
+    top: 20%;
+    left: 50%;
+    z-index: 100000;
+    background: white;
+    width: 60%;
+    height: 400px;
+    transform: translateX(-50%);
+    display: none;
+    text-align: center;
+}
+
+.model_end .close{
+    cursor: pointer;
+    font-size: 20px;
+    padding: 0px 10px;
+    background: rgb(228, 228, 228);
+    border-radius: 20px;
+    width: 18px;
+    text-align: center;
+}
+
+.model_end .success{
+    margin-top: 60px;
+}
+
+.model_end img{
+    margin-top: 20px;
+}
+
+.model_end .cta{
+    margin-top: 10px;
+}
+
+.footer__down{
+    width: 10%;
+    margin: auto;
+}
+
+.erro{
+    width: 100%;
+    height: 50px;
+    background: rgb(255, 58, 58);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
