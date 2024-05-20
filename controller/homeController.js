@@ -21,7 +21,7 @@ exports.reserve = async (req, res) => {
 
     try{
         await ProductModel.updateOne({ productName: reserva.produtoSelecionado }, { $set: { chosen: true, people: reserva.nomeCompleto } });
-        res.render('home', { produtos: productsInDB, erro: erro, status: 'reserve'  });
+        res.redirect('/');
     }catch(error){
         console.log('DEU RUIM AO FAZER UMA RESERVA: ' + error);
     }
