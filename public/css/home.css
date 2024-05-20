@@ -23,6 +23,11 @@ a{
     color: black;
 }
 
+p{
+    width: 90%;
+    margin: auto;
+}
+
 body{
     font-family: 'Poppins', sans-serif;
 }
@@ -50,16 +55,21 @@ body{
 .header__middle{
     margin-top: 80px;
     width: 100%;
-    height: 500px; /* Later remove */
-    background: black;
+    height: 70%; /* Later remove */
+}
+
+.header__middle img{
+    width: 100%;
+    height: 100%;
+    background: white;
 }
 
 .header__down{
-    width: 100%;
+    width: 70%;
+    margin: auto;
 }
 
 .header__down p{
-    width: 70%;
     margin: auto;
     text-align: center;
     margin-top: 80px;
@@ -89,6 +99,11 @@ body{
     margin-top: 50px;
 }
 
+.main__texts .coresImg{
+    width: 30%;
+    margin: 30px 0px;
+}
+
 .main__productsCore{
     display: flex;
     flex-wrap: wrap;
@@ -113,7 +128,6 @@ body{
 }
 
 .product{
-    /* background: red; */
     padding: 10px;
     margin: 0px 20px;
     cursor: pointer;
@@ -121,6 +135,16 @@ body{
     border: 1px solid rgb(192, 192, 192);
     cursor: auto;
     padding-bottom: 15px;
+}
+
+.imagemProduto{
+    max-width: 185px;
+    max-height: 200px; 
+}
+
+.reserved{
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .giftBtn{
@@ -142,11 +166,18 @@ body{
     margin-top: 80px;
 }
 
-.main__seeMoreBtn .seeMoreBtn{
-    background: white;
-    border: none;
+.main__seeMoreBtn .seeMoreBtn {
+    padding: 8px 10px;
+    border: 1px solid rgb(26, 26, 26);
+    transition: .2s;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    background: white;
+}
+
+.main__seeMoreBtn .seeMoreBtn:hover{
+    background: rgb(26, 26, 26);
+    color: white;
 }
 
 .model{
@@ -165,9 +196,14 @@ body{
     display: none;
 }
 
-.model .productNameParagrath{
+.paragrathCurrentProduct{
     text-align: center;
     margin-top: 30px;
+    font-size: 20px;
+}
+
+#currentProduct{
+    font-weight: bold;
 }
 
 .model form{
@@ -181,6 +217,14 @@ body{
     justify-content: center;
     margin-top: 80px;
     padding-bottom: 20px;
+    align-items: center;
+}
+
+.formInput input{
+    padding: 8px 20px;
+    border: 1px solid rgb(26, 26, 26);
+    border-radius: 5px;
+    font-size: 18px;
 }
 
 .model button{
@@ -242,10 +286,7 @@ body{
 
 .model_end img{
     margin-top: 20px;
-}
-
-.model_end .cta{
-    margin-top: 10px;
+    border-radius: 10px;
 }
 
 .footer__down{
@@ -261,4 +302,144 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@media(max-width: 768px){
+    .main__texts .coresImg {
+        width: 80%;
+    }
+
+    .main__productsCore{
+        margin-top: 40px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    h2{
+        font-size: 16px;
+    }
+
+    .header__top{
+        margin-top: 40px;
+    }
+    
+    .header__top h1{
+        font-size: 50px;
+        font-weight: 500;
+    }
+
+    .header__middle{
+        max-width: 90%;
+        margin: auto;
+        margin-top: 40px;
+        border-radius: 10px;
+    }
+    
+    .header__middle img{
+        background: white;
+        height: 100%;
+        border-radius: 10px;
+    }
+
+    .header__down p{
+        text-align: justify;
+    }
+    
+    p{
+        font-size: 13px;
+        width: 100%;
+        text-align: justify;
+    }
+
+    .main__lilyImage{
+        text-align: center;
+        width: 40%;
+        margin: auto;
+    }
+    
+    .lillyImage{
+        width: 80%;
+        margin: 80px 0;
+    }
+
+    .footer__down{
+        text-align: center;
+        width: 40%;
+        margin: auto;
+    }
+
+    .imagemProduto{
+        max-width: 185px;
+        max-height: 180px; 
+    }
+
+    .model{
+        position: fixed;
+        border: 1px solid rgb(192, 192, 192);
+        padding: 20px;
+        margin: auto;
+        border-radius: 10px;
+        top: 20%;
+        left: 50%;
+        z-index: 100000;
+        background: white;
+        width: 60%;
+        height: 400px;
+        transform: translateX(-50%);
+        display: none;
+    }
+    
+    .paragrathCurrentProduct{
+        text-align: center;
+        margin-top: 30px;
+        font-size: 16px;
+    }
+    
+    #currentProduct{
+        font-weight: bold;
+    }
+    
+    .model form{
+        text-align: center;
+        margin-top: 40px;
+    }
+    
+    .model .formInput{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+        margin-top: 40px;
+        padding-bottom: 20px;
+        font-size: 12px;
+    }
+    
+    .model button{
+        margin-top: 150px;
+        padding: 8px 20px;
+        border: 1px solid rgb(26, 26, 26);
+        transition: .2s;
+        border-radius: 5px;
+        margin-top: 10px;
+        cursor: pointer;
+        background: white;
+    }
+    
+    .model .titles{
+        position: absolute;
+        bottom: 20px;
+        width: 80%;
+        text-align: justify;
+        font-size: 10px;
+    }
+
+    .model_end .success{
+        margin-top: 40px;
+    }
+
+    .main__seeMoreBtn {
+        margin-top: 10px;
+    }
 }

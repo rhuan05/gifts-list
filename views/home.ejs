@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de presentes</title>
     <link rel="stylesheet" href="css/home.css">
-
 </head>
 <body>
     <% if(erro != ''){ %>
@@ -16,13 +15,11 @@
             <img src="images/voltar_seta.jpg" alt="Seta" />
             Voltar
         </div>
-        <div class="productName">
-            <p class="productNameParagrath"></p>
-        </div>
-        <form action="/reserve" method="post" id="reserveForm">
+        <p class="paragrathCurrentProduct">Produto selecionado: <span id="currentProduct"></span></p>
+        <form method="post" id="reserveForm">
             <div class="formInput">Nome completo: <input type="text" name="nomeCompleto" id="nomeCompleto" /></div>
-            <input type="hidden" name="product" id="productInput" />
-            <button class="reserveBtn giftBtn">Reservar</button>
+            <input type="hidden" name="produtoSelecionado" id="produtoSelecionado" />
+            <button class="reserveBtn">Reservar</button>
         </form>
         <div class="titles">
             *Clique em reservar para que o produto seja reservado apenas a você.<br>
@@ -33,7 +30,6 @@
         <div class="close">X</div>
         <div class="success">Produto reservado com sucesso!</div>
         <img src="images/cachorro_feliz.jpg" alt="Cachorro Feliz">
-        <p class="cta">Caso queira escolher outro produto, acesse lista de presentes no menu.</p>
     </div>
     <div class="container">
         <header class="header">
@@ -42,11 +38,11 @@
                 <h2>21 de julho de 2024</h2>
             </div>
             <div class="header__middle">
-                <img src="" alt="Banner" id="banner" />
+                <img src="images/pre_wedding.jpg" alt="Banner" id="banner" />
             </div>
             <div class="header__down">
                 <p class="context">
-                    Criamos esse site para compartilhar com vocês os detalhes da organização do nosso casamento. Estamos muito felizes e contamos com a presença de todos no nosso grande dia! Ah, é importante também confirmar sua presença. Para isto contamos com sua ajuda clicando no menu “Confirme sua Presença” e preenchendo os dados necessários. Para nos presentear, escolha qualquer item da Lista de Casamento, seja um item de algum dos sites ou lojas físicas. Fiquem à vontade! Aguardamos vocês no nosso grande dia!
+                    Criamos esse site para compartilhar com vocês os detalhes da organização do nosso casamento. Estamos muito felizes e contamos com a presença de todos no nosso grande dia! Para nos presentear, escolha qualquer item da Lista de Casamento. Fiquem à vontade! Aguardamos vocês no nosso grande dia!
                 </p>
             </div>
         </header>
@@ -57,118 +53,46 @@
             <div class="main__texts">
                 <h2>Lista de presentes</h2>
                 <p>Queremos agradecer a todos os nossos amigos e família por seu amor e apoio ao embarcar nesta jornada. Para iniciar este novo capítulo juntos, ainda precisamos de algumas coisas. Confira os itens que escolhemos nas listas de presentes abaixo e contribua com o que achar melhor. Muito obrigado pela generosidade.</p>
+                <br><br><br><br>
+                <h2>Preferência de cores</h2>
+                <img class="coresImg" src="images/cores.png" alt="Cores">
             </div>
             <div class="main__productsCore">
-                <div class="product">
-                    <div class="product__image">
-                        <img src="images/products/cafeteira.jpg" alt="Cafeteira" />
-                    </div>
-                    <h3>Cafeteira</h3>
-                    <button class="giftBtn">Presentear</button>
-                </div>
-                <div class="product">
-                    <div class="product__image">
-                        <img src="images/products/cafeteira.jpg" alt="Cafeteira" />
-                    </div>
-                    <h3>Cafeteira</h3>
-                    <button class="giftBtn">Presentear</button>
-                </div>
-                <div class="product">
-                    <div class="product__image">
-                        <img src="images/products/cafeteira.jpg" alt="Cafeteira" />
-                    </div>
-                    <h3>Cafeteira</h3>
-                    <button class="giftBtn">Presentear</button>
-                </div>
+                <% if (produtos.length > 0) { %>
+                    <% for(let i=0; i <= 2 && i <= (produtos.length - 1); i++){ %>
+                        <div class="product">
+                            <div class="product__image">
+                                <img class="imagemProduto" src=<%= produtos[i].img %> />
+                            </div>
+                            <h3><%= produtos[i].productName %></h3>
+                            <% if (produtos[i].chosen) { %>
+                                <h2 class="reserved">Reservado</h2>
+                            <% } else { %>
+                                <button class="giftBtn">Presentear</button>
+                            <% } %>
+                        </div>
+                    <% } %>
+                <% } %>
             </div>
             <div class="main__seeMore">
-                <div class="product">
-                    <div class="product__image">
-                        <img src="images/products/cafeteira.jpg" alt="Cafeteira" />
-                    </div>
-                    <h3>Cafeteira</h3>
-                    <button class="giftBtn">Presentear</button>
-                </div>
-                <div class="product">
-                    <div class="product__image">
-                        <img src="images/products/cafeteira.jpg" alt="Cafeteira" />
-                    </div>
-                    <h3>Cafeteira</h3>
-                    <button class="giftBtn">Presentear</button>
-                </div>
-                <div class="product">
-                    <div class="product__image">
-                        <img src="images/products/cafeteira.jpg" alt="Cafeteira" />
-                    </div>
-                    <h3>Cafeteira</h3>
-                    <button class="giftBtn">Presentear</button>
-                </div>
-                <div class="product">
-                    <div class="product__image">
-                        <img src="images/products/cafeteira.jpg" alt="Cafeteira" />
-                    </div>
-                    <h3>Cafeteira</h3>
-                    <button class="giftBtn">Presentear</button>
-                </div>
-                <div class="product">
-                    <div class="product__image">
-                        <img src="images/products/cafeteira.jpg" alt="Cafeteira" />
-                    </div>
-                    <h3>Cafeteira</h3>
-                    <button class="giftBtn">Presentear</button>
-                </div>
-                <div class="product">
-                    <div class="product__image">
-                        <img src="images/products/cafeteira.jpg" alt="Cafeteira" />
-                    </div>
-                    <h3>Cafeteira</h3>
-                    <button class="giftBtn">Presentear</button>
-                </div>
-                <div class="product">
-                    <div class="product__image">
-                        <img src="images/products/cafeteira.jpg" alt="Cafeteira" />
-                    </div>
-                    <h3>Cafeteira</h3>
-                    <button class="giftBtn">Presentear</button>
-                </div>
-                <div class="product">
-                    <div class="product__image">
-                        <img src="images/products/cafeteira.jpg" alt="Cafeteira" />
-                    </div>
-                    <h3>Cafeteira</h3>
-                    <button class="giftBtn">Presentear</button>
-                </div>
-                <div class="product">
-                    <div class="product__image">
-                        <img src="images/products/cafeteira.jpg" alt="Cafeteira" />
-                    </div>
-                    <h3>Cafeteira</h3>
-                    <button class="giftBtn">Presentear</button>
-                </div>
-                <div class="product">
-                    <div class="product__image">
-                        <img src="images/products/cafeteira.jpg" alt="Cafeteira" />
-                    </div>
-                    <h3>Cafeteira</h3>
-                    <button class="giftBtn">Presentear</button>
-                </div>
-                <div class="product">
-                    <div class="product__image">
-                        <img src="images/products/cafeteira.jpg" alt="Cafeteira" />
-                    </div>
-                    <h3>Cafeteira</h3>
-                    <button class="giftBtn">Presentear</button>
-                </div>
-                <div class="product">
-                    <div class="product__image">
-                        <img src="images/products/cafeteira.jpg" alt="Cafeteira" />
-                    </div>
-                    <h3>Cafeteira</h3>
-                    <button class="giftBtn">Presentear</button>
-                </div>
+                <% if (produtos.length > 3) { %>
+                    <% for(let i=3; i < produtos.length; i++){ %>
+                        <div class="product">
+                            <div class="product__image">
+                                <img class="imagemProduto" src=<%= produtos[i].img %> />
+                            </div>
+                            <h3><%= produtos[i].productName %></h3>
+                            <% if (produtos[i].chosen) { %>
+                                <h2 class="reserved">Reservado</h2>
+                            <% } else { %>
+                                <button class="giftBtn">Presentear</button>
+                            <% } %>
+                        </div>
+                    <% } %>
+                <% } %>
             </div>
             <div class="main__seeMoreBtn">
-                <button class="seeMoreBtn">Ver mais...</button>
+                <button class="seeMoreBtn">Ver mais</button>
             </div>
         </main>
         <footer class="footer">
@@ -184,6 +108,15 @@
 
             if(status === 'reserve'){
                 document.querySelector('.model_end').style.display = 'block';
+                document.querySelector('.model').style.display = 'none';
+                document.querySelector('.container').style.opacity = '.5';
+                document.querySelector('img').style.opacity = '.5';
+                document.querySelector('button:not(.reserveBtn)').style.opacity = '.5';
+            }else if(status == 'nomeNulo'){
+                document.querySelector('.model').style.display = 'block';
+                document.querySelector('.container').style.opacity = '.5';
+                document.querySelector('img').style.opacity = '.5';
+                document.querySelector('button:not(.reserveBtn)').style.opacity = '.5';
             }
         };
     </script>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin (Lista de presentes)</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <% if(erro != ''){ %>
+        <div id="erroPreencherCampos"><%= erro %></div>
+    <% } %>
+    <div class="model">
+        <form method="post" enctype="multipart/form-data">
+            <input type="text" name="nameProduct" id="nameProduct" />
+            <input type="file" name="file" id="imgProduto">
+            <button>Adicionar</button>
+        </form>
+    </div>
+    <div class="container">
+        <header></header>
+        <main>
+            <table>
+                <% if(produtos.length > 0) { %>
+                    <thead>
+                        <th>Produto</th>
+                        <th>Reserva</th>
+                    </thead>
+                <% } %>
+                <tbody>
+                <% for(let i=0; i < produtos.length; i++) { %>
+                    <tr class="presente">
+                        <td class="nomePresente"><%= produtos[i].productName%></td>
+                        <td class="reserva">
+                            <% if (produtos[i].chosen == true) { %>
+                                <%= produtos[i].people%>
+                            <% } else { %>
+                                --
+                            <% } %>
+                        </td>
+                        <form action="/admin/delete" method="post">
+                            <input type="hidden" name="id" value="<%= produtos[i]._id%>" />
+                            <td><button>X</button></td>
+                        </form>
+                    </tr>
+                <% } %>
+                </tbody>
+            </table>
+        </main>
+        <footer></footer>
+    </div>
+</body>
+</html>
