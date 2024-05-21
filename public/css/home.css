@@ -162,12 +162,8 @@ body{
     color: white;
 }
 
-.main__seeMoreBtn{
-    margin-top: 80px;
-}
-
 .main__seeMoreBtn .seeMoreBtn {
-    padding: 8px 10px;
+    padding: 8px 18px;
     border: 1px solid rgb(26, 26, 26);
     transition: .2s;
     border-radius: 5px;
@@ -441,5 +437,11 @@ body{
 
     .main__seeMoreBtn {
         margin-top: 10px;
+    }
+}
+
+@media(max-width: 550px){
+    .formInput input {
+        width: 80%;
     }
 }
