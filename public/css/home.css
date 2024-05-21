@@ -10,6 +10,10 @@
     src: url('../font/Angella\ White.otf');
 }
 
+.logo{
+    border-radius: 10px;
+}
+
 h2{
     font-weight: 400;
 }
