@@ -8,7 +8,7 @@ exports.renderHome = async (req, res) => {
 };
 
 exports.reserve = async (req, res) => {
-    const productsInDB = await ProductModel.find().sort({ chosen: 1 });
+    var productsInDB = await ProductModel.find().sort({ chosen: 1 });
     const reserva = req.body;
 
     if(!reserva.nomeCompleto){
@@ -21,7 +21,8 @@ exports.reserve = async (req, res) => {
 
     try{
         await ProductModel.updateOne({ productName: reserva.produtoSelecionado }, { $set: { chosen: true, people: reserva.nomeCompleto } });
-        res.redirect('/');
+        productsInDB = await ProductModel.find().sort({ chosen: 1 });
+        res.render('home', { produtos: productsInDB, erro: erro, status: 'reserve' });
     }catch(error){
         console.log('DEU RUIM AO FAZER UMA RESERVA: ' + error);
     }
