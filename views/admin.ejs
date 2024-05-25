@@ -12,7 +12,7 @@
     <% } %>
     <div class="model">
         <form method="post" enctype="multipart/form-data">
-            <input type="text" name="nameProduct" id="nameProduct" />
+            <input type="text" name="nameProduct" id="nameProduct" placeholder="Nome do produto" />
             <input type="file" name="file" id="imgProduto">
             <button>Adicionar</button>
         </form>
@@ -22,10 +22,10 @@
         <main>
             <table>
                 <% if(produtos.length > 0) { %>
-                    <thead>
-                        <th>Produto</th>
-                        <th>Reserva</th>
-                    </thead>
+                <thead>
+                    <th>Produto</th>
+                    <th>Reserva</th>
+                </thead>
                 <% } %>
                 <tbody>
                 <% for(let i=0; i < produtos.length; i++) { %>
@@ -40,7 +40,7 @@
                         </td>
                         <form action="/admin/delete" method="post">
                             <input type="hidden" name="id" value="<%= produtos[i]._id%>" />
-                            <td><button>X</button></td>
+                            <td class="tdDelete"><button>X</button></td>
                         </form>
                     </tr>
                 <% } %>

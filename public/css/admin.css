@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.model{
+    margin: auto;
+    text-align: center;
+    width: 80%;
+}
+
+.model form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+    margin: auto;
+    margin-top: 80px;
+}
+
+#nameProduct{
+    border: none;
+    box-shadow: 0px 0px 5px rgb(174, 174, 174);
+    font-size: 16px;
+    border-radius: 5px;
+    outline: none;
+    padding: 3px 10px;
+}
+
+.model form button{
+    background: #ae492d;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    border: none;
+    padding: 8px 10px;
+}
+
+.container{
+    max-width: 80%;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 80px;
+    font-family: 'Poppins', sans-serif;
+}
+
+table{
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: auto;
+    background: #ae492d;
+}
+
+thead{
+    color: white;
+    font-weight: bold;
+}
+
+th{
+    border: 1px solid black;
+}
+
+tbody{
+    border: 1px solid black;
+}
+
+td{
+    border: 1px solid black;
+    padding: 3px 8px;
+    background: white;
+}
+
+td button{
+    background: rgb(255, 98, 98);
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 3px 10px;
+}
+
+.tdDelete{
+    padding: 0px 0px;
+    background-color: rgb(255, 98, 98);
+}
+
+@media(max-width: 600px){
+    
+    #nameProduct{
+        border: none;
+        font-size: 14px;
+        border-radius: 2px;
+        padding: 3px 5px;
+    }
+
+    .model form button{
+        font-size: 12px;
+        padding: 5px 6px;
+    }
+
+    th{
+        font-size: 12px;
+    }
+
+    .model form{
+        width: 100%;
+    }
+
+    td{
+        font-size: 10px;
+    }
+
+    td button{
+        font-size: 14px;
+    }
+}

@@ -20,6 +20,7 @@ h2{
 
 h3{
     font-weight: 400;
+    font-size: 16px;
 }
 
 a{
@@ -312,10 +313,6 @@ body{
 
     .main__productsCore{
         margin-top: 40px;
-    }
-
-    h3 {
-        font-size: 16px;
     }
 
     h2{
